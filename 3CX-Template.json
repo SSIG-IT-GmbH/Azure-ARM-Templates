@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "type": "String",
+            "type": "string",
             "allowedValues": [
                 "germanywestcentral",
                 "westeurope"
@@ -22,21 +22,21 @@
             "defaultValue": "10.16.32.0/24"
         },
         "osDiskType": {
-            "type": "String",
+            "type": "string",
             "allowedValues": [
                 "Standard_LRS",
                 "StandardSSD_LRS"
             ]            
         },
         "virtualMachineSize": {
-            "type": "String"
+            "type": "string"
         },
         "adminUsername": {
-            "type": "String",
+            "type": "string",
             "defaultValue": "pbxexpress"
         },
         "adminPassword": {
-            "type": "SecureString"
+            "type": "securestring"
         }
     },
     "variables": {
@@ -327,8 +327,11 @@
                 "publisher": "Microsoft.Azure.Extensions",
                 "autoUpgradeMinorVersion": false,
                 "typeHandlerVersion": "2.1",
+                "protectedSettings": {
+                    "commandToExecute": "sh 3CXSwapFix.sh"
+                },
                 "settings": {
-                    "fileUris": ["https://raw.githubusercontent.com/SSIG-IT-GmbH/Azure-ARM-Templates/main/3CXSwapFix.sh"],
+                    "fileUris": ["https://raw.githubusercontent.com/SSIG-IT-GmbH/Azure-ARM-Templates/main/3CXSwapFix.sh"]
                 }
                 
             }
