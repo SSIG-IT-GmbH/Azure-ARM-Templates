@@ -270,6 +270,22 @@
                 "publisher": "3cx-pbx",
                 "product": "3cx-pbx"
             },
+            "resources": [
+                {
+                    "type": "extensions",
+                    "name": "SwapFixScript",
+                    "apiVersion": "2022-03-01",
+                    "properties": {
+                        "type": "CustomScript",
+                        "publisher": "Microsoft.Azure.Extensions",
+                        "autoUpgradeMinorVersion": false,
+                        "typeHandlerVersion": "2.1",
+                        "settings": {
+                            "fileUris": ["https://raw.githubusercontent.com/SSIG-IT-GmbH/Azure-ARM-Templates/main/3CXSwapFix.sh"]
+                        }
+                    }
+                }
+            ],
             "properties": {
                 "hardwareProfile": {
                     "vmSize": "[parameters('virtualMachineSize')]"
